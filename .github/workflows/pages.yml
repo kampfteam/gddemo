@@ -2,7 +2,7 @@ name: "godot-ci export"
 on:
   push:
     branches: [ main ]
-  workflow-dispatch:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -39,6 +39,7 @@ jobs:
         run: |
           mkdir -v -p build/web
           godot --headless --verbose --export-release "HTML5" ../build/web/index.html
+          ls build/web
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
