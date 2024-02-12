@@ -4,5 +4,3 @@
 # ignore compiled exports
 build/*
 !build/web
-build/web/*
-!build/web/serve.py
