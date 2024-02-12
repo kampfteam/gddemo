@@ -60,6 +60,7 @@ jobs:
           name: Windows (x86)
           path: build/win86/
       - name: Upload Linux
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: Linux (x86, x64 and arm)
           path: build/linux/
