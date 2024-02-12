@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bupd2805s1b0v"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_omob6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uw1o1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tenny"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ev4eb"]
+normal = Vector2(0.325991, -0.945373)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pskwi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_omob6")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(14.5, 16.5)
+texture = SubResource("PlaceholderTexture2D_uw1o1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_tenny")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-23, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(17, 6)
+shape = SubResource("WorldBoundaryShape2D_ev4eb")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(15.1362, 10.3216)
+rotation = 0.349066
+scale = Vector2(320.003, 14.5)
+texture = SubResource("PlaceholderTexture2D_pskwi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.17, 3.17)

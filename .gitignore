@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+
+# ignore compiled exports
+export/web/*.*
+!export/web/serve.py
+export/*.exe
+*.pck
+export/gddemo.zip
