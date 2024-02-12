@@ -39,10 +39,30 @@ jobs:
           godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_linux.x86_64.zip
           godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_export_templates.tpz
           use_preset_export_path: true
-      - name: Upload Artifact
+      - name: Upload Web
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
+          name: web
+      - name: Upload macOS
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: macOS
+          path: build/macos/
+      - name: Upload Windows (x64)
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: Windows (x64)
+          path: build/win64/
+      - name: Upload Windows (x86)
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: Windows (x86)
+          path: build/win86/
+      - name: Upload Linux
+        with:
+          name: Linux (x86, x64 and arm)
+          path: build/linux/
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4
