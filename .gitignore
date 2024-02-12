@@ -2,8 +2,7 @@
 .godot/
 
 # ignore compiled exports
-build/web/*.*
+build/*
+!build/web
+build/web/*
 !build/web/serve.py
-build/*.exe
-*.pck
-build/gddemo.zip
