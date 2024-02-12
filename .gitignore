@@ -7,6 +7,3 @@ build/web/*.*
 build/*.exe
 *.pck
 build/gddemo.zip
-
-# ignore git addon
-addons/godot-git-plugin
